@@ -1,0 +1,282 @@
+@import "compass/css3";
+@font-face {
+    font-family: 'ReemKufi';
+    src: url('ReemKufi-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'ReemKufi';
+    src: url('ReemKufi-Medium.ttf') format('truetype');
+    font-weight: 500; /* Adjust the value as needed */
+}
+
+@font-face {
+    font-family: 'ReemKufi';
+    src: url('ReemKufi-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'ReemKufi';
+    src: url('ReemKufi-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* Adjust the value as needed */
+}
+.bold-text {
+    font-weight: bold;
+    font-size: 95px;
+    position: absolute;
+    /* bottom: 5%; */
+    /* left: 5%;     */
+    margin: 0;
+}
+
+.medium-text {
+    font-weight: 500; /* Adjust the value as needed */
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    margin: 0;
+}
+
+.regular-text {
+    font-weight: normal;
+}
+
+.semibold-text {
+    font-weight: 600; /* Adjust the value as needed */
+}
+body {
+    background-color: #002D62;
+        /* background-color: #011225; */
+        /* background-color: black;  */
+
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%) scale(.5);
+    text-align: center;
+    -webkit-perspective: 3000   px;
+    -webkit-perspective-origin: 0px;
+}
+
+.kaaba {
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+}
+
+
+/* Start front-wall */
+
+.kaaba .front-wall {
+    width: 700px;
+    height: 700px;
+    background-color: rgb(34, 40, 56);
+    margin: auto;
+    padding-top: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.kaaba .front-wall .long-line {
+    background-color: #FFD700;
+    height: 80px;
+    width: 100%;
+    display: flex;
+}
+
+.kaaba .front-wall .long-line .short-line {
+    background-color: #e5c100;
+    height: 60px;
+    width: 160px;
+    margin: auto;
+    justify-content: space-evenly;
+    border-radius: 15px;
+}
+
+.kaaba .front-wall .long-line:nth-of-type(2) {
+    background-color: transparent;
+    margin-top: 10px
+}
+
+.kaaba .front-wall .long-line:nth-of-type(2) .short-line {
+    width: 120px;
+}
+
+.kaaba .front-wall .long-line:nth-of-type(2) .circle-between-lines {
+    background-color: #e5c100;
+    height: 60px;
+    width: 60px;
+    margin: auto;
+    justify-content: space-evenly;
+    border-radius: 50%;
+}
+
+.kaaba .front-wall .long-line:nth-of-type(3) {
+    margin-top: 221px;
+    background-color: white;
+}
+
+.kaaba .front-wall .long-line:nth-of-type(4) {
+    height: 129px;
+    flex-flow: row wrap;
+    background-color: beige;
+}
+
+.kaaba .front-wall .long-line:nth-of-type(4) .short-line {
+    height: 29px;
+    width: 67px;
+    border-radius: 0;
+    background-color: chocolate;
+}
+
+
+/* End front-wall */
+
+
+/* Start scpical */
+
+.short-line-second {
+    width: 242px;
+    background-color: #e5c100;
+}
+
+.door {
+    position: relative;
+    height: 383px;
+    border-radius: 0;
+}
+
+
+/* end scpical */
+
+
+/* Start */
+
+.front-kaaba {
+    transform: translate(-50%, -50%);
+}
+
+.end-kaaba {
+    transform: translate(-50%, -50%) translateZ(-700px);
+}
+
+.left-kaaba {
+    transform: translate(-50%, -50%) rotateY(90deg);
+    transform-origin: left;
+}
+
+.right-kaaba {
+    transform: translate(-50%, -50%) rotateY(-90deg);
+    transform-origin: right;
+}
+
+.top-kaaba {
+    transform: translate(-50%, -50%) rotateX(-90deg);
+    transform-origin: top;
+}
+
+.bottom-kaaba {
+    transform: translate(-50%, -50%) rotateX(90deg);
+    transform-origin: bottom;
+}
+
+
+/* Start */
+
+label {
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    text-align: center;
+    margin: 5px;
+}
+
+label:hover {
+    background: #eee;
+}
+
+input:checked+label {
+    font-weight: bold;
+}
+
+input {
+    position: absolute;
+    left: -9999px;
+}
+
+input[value="front"]:checked~.container .kaaba {
+    -webkit-transform: translateZ(-150px) rotateY(0);
+}
+
+input[value="left"]:checked~.container .kaaba {
+    -webkit-transform: translateZ(-150px) rotateY(90deg);
+}
+
+input[value="right"]:checked~.container .kaaba {
+    -webkit-transform: translateZ(-150px) rotateY(-90deg);
+}
+
+input[value="top"]:checked~.container .kaaba {
+    -webkit-transform: translateZ(-150px) rotateX(-90deg);
+}
+
+input[value="bottom"]:checked~.container .kaaba {
+    -webkit-transform: translateZ(-150px) rotateX(90deg);
+}
+
+input[value="back"]:checked~.container .kaaba {
+    -webkit-transform: translateZ(-150px) rotateY(180deg);
+}
+
+.text-container {
+    font-family: 'ReemKufi', Arial, sans-serif; /* Use the chosen font family name here */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 80vh;
+    margin: 0;
+    padding-left: 20%;
+    font-size: xx-large;
+    color: #D1B000;
+}
+
+@media (max-width: 1000px) { /* Adjust the max-width to your desired breakpoint */
+    .text-container {
+        align-items: center;
+        padding: 0;
+        text-align: center;
+    }
+    .bold-text {
+        font-weight: bold;
+        font-size: 125px;
+        position: absolute;
+        align-items: center;
+        padding: 0;
+        text-align: center;
+        top:20%;
+    }
+    .medium-text {
+        font-weight: 500; /* Adjust the value as needed */
+        position: absolute;
+        bottom: 25%;
+        left: 5%;
+        margin: 0;
+        font-size: 75px;
+
+    }
+    .container{
+        left: 50%;
+    }
+    
+}
+
+
+
+
