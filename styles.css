@@ -265,7 +265,7 @@ input[value="back"]:checked~.container .kaaba {
     .medium-text {
         font-weight: 500; /* Adjust the value as needed */
         position: absolute;
-        bottom: 25%;
+      /*  bottom: 25%;*/
         left: 5%;
         margin: 0;
         font-size: 75px;
